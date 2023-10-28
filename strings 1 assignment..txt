@@ -1,0 +1,109 @@
+﻿Question.1
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    string str;
+    getline(cin,str);
+    for(int i=0; str[i]!='\0'; i++){
+        if(i%2!=0) str[i] = '#';
+    }
+    cout<<str<<endl;
+}
+
+
+
+
+
+
+Question.2
+#include<bits/stdc++.h>
+using namespace std;
+bool isConsonant(char ch){
+    if(ch<65) return false;
+    else if(ch>90 && ch<97) return false;
+    else if(ch>122) return false;
+    else if(ch=='a' || ch=='A') return false;
+    else if(ch=='e' || ch=='E') return false;
+    else if(ch=='i' || ch=='I') return false;
+    else if(ch=='o' || ch=='O') return false;
+    else if(ch=='u' || ch=='U') return false;
+    else return true;
+}
+int main(){
+    string str;
+    getline(cin,str);
+    int count = 0;
+    for(int i=0; i<str.length(); i++){
+        if(isConsonant(str[i])) count++;
+    }
+    cout<<count;
+}
+
+
+
+
+
+
+Question.3
+#include<bits/stdc++.h>
+using namespace std;
+bool isPalindrome(string s){
+    int i=0;
+    int j=s.length()-1;
+    while(i<j){
+        if(s[i]!=s[j]) return false;
+        i++;
+        j--;
+    }
+    return true;
+}
+int main(){
+    string s;
+    getline(cin,s);
+    if(isPalindrome(s)== true)
+    cout<<"string is palindrome";
+    else
+    cout<<"string is not palindrome";
+}
+
+
+
+
+
+
+Question.4
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    string s;
+    getline (cin,s);
+    int n=s.length();
+    int i=n/2;
+    int j=n-1;
+    while(i<j){
+        swap(s[i],s[j]);
+        i++;
+        j--;
+    }
+    cout<<s;
+}
+
+
+
+
+
+
+Question.5
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    string s;
+    getline(cin,s);
+    int x=0;
+    int n=s.length();
+    for(int i=0; i<n; i++){
+        x *= 10;
+        x += (s[i]-48);
+    }
+    cout<<x;
+}
